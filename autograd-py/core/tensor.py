@@ -177,7 +177,7 @@ class Tensor:
         return out
 
     def sum(self):
-        op = np.sum(self.data, axis=0, keepdims=True)
+        op = np.sum(self.data)
         out = self._create_results(op, self)
         out.op = 'sum'
 

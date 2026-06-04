@@ -8,4 +8,4 @@ class SGD:
         for layer in layers:
             for p in layer.get_params():
                 p.data -= lr * p.grad
-                p.grad = np.zeros_like(p.grad).astype('float32')
+                p.grad = None

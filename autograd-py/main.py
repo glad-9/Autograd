@@ -30,10 +30,10 @@ loss = BCE()
 optimizer = SGD()
 
 model = Network(
-    [Linear(2, 4), ReLU(), Linear(4, 2), ReLU(), Linear(2, 1), Sigmoid()],
+    [Linear(2, 8), ReLU(), Linear(8, 4), ReLU(), Linear(4, 1), Sigmoid()],
     loss,
     optimizer,
 )
 
-final_cost = model.fit(train=train, lr=0.01, iterations=10000)
+final_cost = model.fit(train=train, lr=0.05, iterations=10000)
 
