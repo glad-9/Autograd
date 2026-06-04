@@ -1,9 +1,17 @@
-from scalar.value import Value
+from core.tensor import Tensor
+from nn.activation import ReLU, Sigmoid
+from nn.optimizer import SGD
+from nn.loss import BCE
+from nn.layer import Linear
+from nn.network import Network
 
-a = Value(2.0)
-b = Value(3.0)
-c = Value(1.0)
 
-L = a * b
+loss = BCE()
+optimizer = SGD()
 
-print(L._prev)
+model = Network(
+    [Linear(2, 4), ReLU(), Linear(4, 2), ReLU(), Linear(2, 1), Sigmoid()],
+    loss,
+    optimizer,
+)
+
